@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Configuraciones básicas del documento -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chatbot XUMTECH</title>
+
+  <!-- Enlace al archivo de estilos CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- === BOTÓN PARA MODO OSCURO/CLARO === -->
+  <div class="modo-toggle-wrapper">
+    <button id="modoToggle" class="modo-toggle">🌙</button>
+    <span class="modo-texto">Cambiar luz</span>
+  </div>
+
+  <!-- === SELECTOR DE IDIOMA (ES/EN) === -->
+  <div class="idioma-select">
+    🌐 Idioma:
+    <select id="idiomaSelect">
+      <option value="es" selected>Español</option>
+      <option value="en">English</option>
+    </select>
+  </div>
+
+  <!-- === ENCABEZADO DEL SITIO === -->
+  <header class="main-header">
+    <div class="header-content">
+      <span>🤖 Proyecto Chatbot - XUMTECH</span>
+    </div>
+  </header>
+
+  <!-- === ÁREA PRINCIPAL DEL CHAT === -->
+  <main class="chat-wrapper">
+    <div class="chat-container">
+      <h1>🤖 Chatbot <span>XUMTECH</span></h1>
+
+      <!-- Zona donde se muestran los mensajes del chat -->
+      <div id="chatBox" class="chat-box"></div>
+
+      <!-- Formulario para enviar preguntas al chatbot -->
+      <form id="formulario">
+        <input type="text" id="pregunta" placeholder="Escribí tu mensaje..." autocomplete="off" />
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- === PIE DE PÁGINA CON CRÉDITOS === -->
+  <footer class="main-footer">
+    © 2025 William Cubero • Proyecto técnico para evaluación <strong>XUMTECH</strong>
+  </footer>
+
+  <!-- Enlace al archivo JavaScript con la lógica del chatbot -->
+  <script src="main.js"></script>
+</body>
+</html>

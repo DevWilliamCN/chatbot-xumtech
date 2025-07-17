@@ -1,0 +1,268 @@
+/* === BASE GENERAL DEL CUERPO === */
+body {
+  font-family: 'Segoe UI', sans-serif;              /* Fuente legible y moderna */
+  background-color: #f4f6fa;                        /* Color de fondo claro */
+  margin: 0;
+  padding: 0;
+  display: flex;                                     /* Permite que el footer se alinee abajo */
+  flex-direction: column;
+  min-height: 100vh;                                 /* Asegura que ocupe toda la altura de la ventana */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves para modo oscuro */
+}
+
+/* === HEADER FIJO EN LA PARTE SUPERIOR === */
+.main-header {
+  background-color: #007bff;                        /* Color azul corporativo */
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center;
+  position: fixed;                                   /* Lo fija en la parte superior */
+  width: 100%;
+  top: 0;
+  z-index: 999;                                      /* Lo coloca sobre otros elementos */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);          /* Sombra sutil debajo */
+}
+
+/* Contenido interno del header */
+.header-content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* === FOOTER FIJO EN LA PARTE INFERIOR === */
+.main-footer {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  font-size: 0.9rem;
+  width: 100%;
+  position: fixed;                                   /* Lo fija abajo */
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);         /* Sombra hacia arriba */
+  z-index: 999;
+}
+
+/* === ÁREA CENTRAL DEL CHAT === */
+.chat-wrapper {
+  flex: 1;
+  padding: 120px 20px 140px; /* padding-bottom aumentado por el footer fijo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenedor del chat */
+.chat-container {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px 30px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Título del chat */
+.chat-container h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.chat-container h1 span {
+  color: #007bff;  /* Colorea el nombre de XUMTECH */
+}
+
+/* Caja donde se muestran los mensajes */
+#chatBox {
+  background: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  max-height: 300px;
+  overflow-y: auto;              /* Permite scroll si se llena */
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+/* Estilo para el texto del usuario */
+.usuario {
+  font-weight: bold;
+  color: #222;
+  margin-top: 10px;
+}
+
+/* Estilo para el texto del bot */
+.bot {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+/* Animación al aparecer cada mensaje */
+.mensaje {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === FORMULARIO DE ENTRADA === */
+form {
+  display: flex;
+  gap: 10px;
+}
+
+/* Campo de texto del usuario */
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+/* Botón de enviar */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.02); /* efecto al pasar el mouse */
+}
+
+/* === BOTÓN FLOTANTE DE MODO OSCURO === */
+.modo-toggle-wrapper {
+  position: fixed;
+  top: 85px;
+  right: 20px;
+  text-align: center;
+  z-index: 999;
+}
+
+.modo-toggle {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  width: 45px;
+  height: 45px;
+  font-size: 20px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.modo-texto {
+  display: block;
+  font-size: 0.8rem;
+  color: #333;
+  margin-top: 4px;
+}
+
+/* === SELECTOR DE IDIOMA FLOTANTE === */
+.idioma-select {
+  position: fixed;
+  top: 85px;
+  left: 20px;
+  font-size: 0.9rem;
+  z-index: 999;
+  background: transparent;
+  color: #333;
+}
+
+.idioma-select select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-left: 5px;
+  font-size: 0.9rem;
+}
+
+/* === ESTILOS PARA MODO OSCURO === */
+body.dark {
+  background-color: #1f1f1f;
+  color: #f0f0f0;
+}
+
+body.dark .main-header,
+body.dark .main-footer {
+  background-color: #111;
+  color: #fff;
+}
+
+body.dark .chat-container {
+  background-color: #2c2c2c;
+}
+
+body.dark #chatBox {
+  background-color: #1f1f1f;
+  border-color: #444;
+  color: #ccc;
+}
+
+body.dark input[type="text"] {
+  background-color: #333;
+  border-color: #555;
+  color: #fff;
+}
+
+body.dark button {
+  background-color: #444;
+  border-color: #555;
+}
+
+body.dark .bot {
+  color: #61dafb;
+}
+
+body.dark .modo-texto,
+body.dark .idioma-select {
+  color: #ddd;
+}
+
+body.dark .idioma-select select {
+  background-color: #333;
+  color: #fff;
+  border-color: #666;
+}
+
+/* === RESPONSIVE PARA CELULARES === */
+@media (max-width: 600px) {
+  .chat-container {
+    margin: 0 10px;
+    padding: 20px;
+  }
+
+  .modo-toggle-wrapper {
+    top: 70px;
+    right: 10px;
+  }
+
+  .idioma-select {
+    top: 70px;
+    left: 10px;
+  }
+}

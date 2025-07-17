@@ -1,0 +1,23 @@
+{
+  "name": "proyecto-chatbot-xumtech",
+  "version": "1.0.0",
+  "description": "Chatbot local simple desarrollado con Node.js y JavaScript",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "keywords": [
+    "chatbot",
+    "fullstack",
+    "nodejs",
+    "javascript",
+    "xumtech"
+  ],
+  "author": "William Cubero",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "fastest-levenshtein": "^1.0.16"
+  }
+}
